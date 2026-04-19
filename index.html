@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vikam Atalaya Multi Projects – Bhubaneswar</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --cream: #F5F0E8;
+            --warm-white: #FAF7F2;
+            --deep-green: #1C3A2A;
+            --sage: #5C7A5E;
+            --gold: #B8923A;
+            --gold-light: #D4AF6A;
+            --earth: #6B4C35;
+            --text-dark: #1A1A18;
+            --text-mid: #4A4A42;
+            --text-light: #8A8A7E;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--cream);
+            color: var(--text-dark);
+            font-family: 'Jost', sans-serif;
+            font-weight: 300;
+            overflow-x: hidden;
+        }
+
+        /* ── COVER ── */
+        .cover {
+            min-height: 100vh;
+            background: var(--deep-green);
+            display: grid;
+            grid-template-rows: 1fr auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 80% at 80% 20%, rgba(184, 146, 58, 0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 60% at 10% 80%, rgba(92, 122, 94, 0.2) 0%, transparent 60%);
+        }
+
+        /* decorative leaf lines */
+        .cover::after {
+            content: '';
+            position: absolute;
+            right: -60px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            border: 1px solid rgba(184, 146, 58, 0.2);
+            box-shadow:
+                0 0 0 40px rgba(184, 146, 58, 0.04),
+                0 0 0 80px rgba(184, 146, 58, 0.03),
+                0 0 0 130px rgba(184, 146, 58, 0.02);
+        }
+
+        .cover-inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 10% 60px;
+            position: relative;
+            z-index: 2;
+            animation: fadeUp 1.2s ease both;
+        }
+
+        .logo-mark {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 80px;
+            animation: fadeUp 1s ease 0.2s both;
+        }
+
+        .logo-emblem {
+            width: 48px;
+            height: 48px;
+            border: 1.5px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-emblem svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        .logo-text-wrap {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--gold-light);
+            letter-spacing: 0.04em;
+        }
+
+        .logo-sub {
+            font-size: 0.6rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.45);
+            margin-top: 4px;
+        }
+
+        .cover-tag {
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 28px;
+            animation: fadeUp 1s ease 0.4s both;
+        }
+
+        .cover-headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 7vw, 6rem);
+            font-weight: 300;
+            line-height: 1.05;
+            color: var(--warm-white);
+            max-width: 700px;
+            animation: fadeUp 1s ease 0.5s both;
+        }
+
+        .cover-headline em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+
+        .cover-divider {
+            width: 60px;
+            height: 1px;
+            background: var(--gold);
+            margin: 40px 0;
+            animation: expandW 1.2s ease 0.8s both;
+        }
+
+        .cover-body {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 480px;
+            animation: fadeUp 1s ease 0.9s both;
+        }
+
+        .cover-footer {
+            padding: 28px 10%;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            animation: fadeUp 1s ease 1.1s both;
+        }
+
+        .cover-footer-city {
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.35);
+        }
+
+        .cover-footer-line {
+            width: 1px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .cover-scroll {
+            font-size: 0.6rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cover-scroll::after {
+            content: '';
+            display: inline-block;
+            width: 30px;
+            height: 1px;
+            background: var(--gold);
+            animation: pulse 2s ease infinite;
+        }
+
+        /* ── SECTION SHARED ── */
+        section {
+            padding: 100px 10%;
+        }
+
+        .section-tag {
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .section-headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.2rem, 4vw, 3.6rem);
+            font-weight: 300;
+            line-height: 1.15;
+            color: var(--deep-green);
+        }
+
+        .section-headline em {
+            font-style: italic;
+            color: var(--sage);
+        }
+
+        .thin-rule {
+            width: 50px;
+            height: 1px;
+            background: var(--gold);
+            margin: 32px 0;
+        }
+
+        .body-text {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: var(--text-mid);
+            max-width: 560px;
+        }
+
+        /* ── PHILOSOPHY ── */
+        .philosophy {
+            background: var(--warm-white);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .philosophy-visual {
+            position: relative;
+            height: 500px;
+        }
+
+        .phi-box {
+            position: absolute;
+            border-radius: 2px;
+        }
+
+        .phi-box-1 {
+            background: var(--deep-green);
+            width: 65%;
+            height: 70%;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+        }
+
+        .phi-box-1-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.5;
+        }
+
+        .phi-box-2 {
+            background: var(--gold);
+            width: 40%;
+            height: 35%;
+            bottom: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .phi-box-2-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            color: var(--warm-white);
+            font-weight: 300;
+            line-height: 1;
+            text-align: center;
+        }
+
+        .phi-box-2-label {
+            font-size: 0.55rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 6px;
+            text-align: center;
+        }
+
+        .phi-box-3 {
+            background: var(--sage);
+            width: 30%;
+            height: 28%;
+            bottom: 38%;
+            right: 0;
+        }
+
+        /* ── PILLARS ── */
+        .pillars {
+            background: var(--deep-green);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillars::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            border: 1px solid rgba(184, 146, 58, 0.1);
+            box-shadow: 0 0 0 60px rgba(184, 146, 58, 0.04);
+        }
+
+        .pillars .section-headline {
+            color: var(--warm-white);
+        }
+
+        .pillars .body-text {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            margin-top: 60px;
+        }
+
+        .pillar-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 40px 32px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .pillar-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .pillar-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            transform: translateY(-5px);
+        }
+
+        .pillar-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: rgba(184, 146, 58, 0.3);
+            font-weight: 300;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .pillar-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--gold-light);
+            font-weight: 400;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .pillar-desc {
+            font-size: 0.88rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ── PROMISE ── */
+        .promise {
+            background: var(--cream);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+        .promise-list {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .promise-item {
+            display: grid;
+            grid-template-columns: 36px 1fr;
+            gap: 20px;
+            padding: 28px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+            align-items: start;
+            transition: transform 0.3s ease;
+        }
+
+        .promise-item:hover {
+            transform: translateX(10px);
+        }
+
+        .promise-item:last-child {
+            border-bottom: none;
+        }
+
+        .promise-icon {
+            width: 36px;
+            height: 36px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .promise-icon svg {
+            width: 14px;
+            height: 14px;
+            stroke: var(--gold);
+        }
+
+        .promise-item-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            color: var(--deep-green);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .promise-item-desc {
+            font-size: 0.88rem;
+            line-height: 1.75;
+            color: var(--text-mid);
+        }
+
+        /* ── COMMUNITY ── */
+        .community {
+            background: var(--sage);
+            text-align: center;
+            padding: 100px 15%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .community::before,
+        .community::after {
+            content: '“';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20rem;
+            color: rgba(255, 255, 255, 0.06);
+            position: absolute;
+            line-height: 1;
+            top: -30px;
+        }
+
+        .community::before {
+            left: 20px;
+        }
+
+        .community::after {
+            content: '”';
+            right: 20px;
+            bottom: -60px;
+            top: auto;
+        }
+
+        .community-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 3.5vw, 3rem);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--warm-white);
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 0 auto 32px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .community-attr {
+            font-size: 0.65rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ── FOR THE CHILDREN ── */
+        .children {
+            background: var(--warm-white);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .children-boxes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .child-box {
+            padding: 32px 24px;
+            background: var(--cream);
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .child-box:hover {
+            transform: scale(1.02);
+        }
+
+        .child-box::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            background: var(--gold);
+        }
+
+        .child-box:nth-child(2) {
+            background: var(--deep-green);
+        }
+
+        .child-box:nth-child(2) .child-box-title {
+            color: var(--gold-light);
+        }
+
+        .child-box:nth-child(2) .child-box-desc {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .child-box:nth-child(2)::after {
+            background: var(--gold);
+        }
+
+        .child-box:nth-child(3) {
+            background: var(--gold);
+        }
+
+        .child-box:nth-child(3) .child-box-title {
+            color: var(--deep-green);
+        }
+
+        .child-box:nth-child(3) .child-box-desc {
+            color: rgba(28, 58, 42, 0.7);
+        }
+
+        .child-box:nth-child(3)::after {
+            background: var(--deep-green);
+        }
+
+        .child-box-icon {
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+        }
+
+        .child-box-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            color: var(--deep-green);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .child-box-desc {
+            font-size: 0.82rem;
+            line-height: 1.7;
+            color: var(--text-mid);
+        }
+
+        /* ── GENERATIONS ── */
+        .generations {
+            background: var(--deep-green);
+            padding: 100px 10%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gen-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .gen-visual {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .gen-bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.72rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 8px;
+        }
+
+        .gen-bar-track {
+            height: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .gen-bar-fill {
+            height: 100%;
+            background: var(--gold);
+            border-radius: 2px;
+            animation: barGrow 2s ease 0.5s both;
+        }
+
+        .generations .section-headline {
+            color: var(--warm-white);
+        }
+
+        .generations .body-text {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .generations .section-tag {
+            color: var(--gold);
+        }
+
+        .generations .thin-rule {
+            background: var(--gold);
+        }
+
+        /* ── CLOSING ── */
+        .closing {
+            background: var(--cream);
+            text-align: center;
+            padding: 120px 15%;
+        }
+
+        .closing-logo {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 50px;
+        }
+
+        .closing-emblem {
+            width: 64px;
+            height: 64px;
+            border: 1.5px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .closing-emblem svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .closing-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--deep-green);
+            font-weight: 400;
+            letter-spacing: 0.06em;
+        }
+
+        .closing-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.6rem, 3vw, 2.6rem);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--deep-green);
+            line-height: 1.5;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .closing-divider {
+            width: 1px;
+            height: 60px;
+            background: var(--gold);
+            margin: 0 auto 40px;
+        }
+
+        .closing-contact {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+        }
+
+        .contact-item-label {
+            font-size: 0.55rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .contact-item-value {
+            font-size: 0.9rem;
+            color: var(--text-mid);
+            font-weight: 400;
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            background: var(--text-dark);
+            padding: 24px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        footer span {
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.25);
+        }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes expandW {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 60px;
+            }
+        }
+
+        @keyframes barGrow {
+            from {
+                width: 0 !important;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+
+            .philosophy,
+            .promise,
+            .children,
+            .gen-inner {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .philosophy-visual {
+                height: 320px;
+            }
+
+            .children-boxes {
+                grid-template-columns: 1fr;
+            }
+
+            .closing-contact {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .cover-inner {
+                padding: 60px 6% 40px;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+
+            footer {
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ══ COVER ══ -->
+    <div class="cover">
+        <div class="cover-inner">
+            <div class="logo-mark">
+                <div class="logo-emblem">
+                    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2L4 10V26H11V18H17V26H24V10L14 2Z" stroke="#B8923A" stroke-width="1.3"
+                            stroke-linejoin="round" />
+                        <path d="M14 2L14 8" stroke="#B8923A" stroke-width="1.3" />
+                        <circle cx="14" cy="13" r="2.5" stroke="#B8923A" stroke-width="1" />
+                    </svg>
+                </div>
+                <div class="logo-text-wrap">
+                    <span class="logo-name">Vikam Atalaya</span>
+                    <span class="logo-sub">Multi Projects · Bhubaneswar</span>
+                </div>
+            </div>
+
+            <div class="cover-tag">Crafting Legacies Since Our First Stone</div>
+
+            <h1 class="cover-headline">
+                Where Homes Become<br><em>Heirlooms.</em>
+            </h1>
+
+            <div class="cover-divider"></div>
+
+            <p class="cover-body">
+                Affordable luxury. Thoughtful design. Enduring quality.
+                We build not just houses — but the ground on which your family's story unfolds, generation after
+                generation, in the heart of Bhubaneswar.
+            </p>
+        </div>
+
+        <div class="cover-footer">
+            <span class="cover-footer-city">Bhubaneswar, Odisha — India</span>
+            <div class="cover-footer-line"></div>
+            <span class="cover-scroll">Discover our vision</span>
+        </div>
+    </div>
+
+    <!-- ══ PHILOSOPHY ══ -->
+    <section class="philosophy">
+        <div>
+            <div class="section-tag">Our Philosophy</div>
+            <h2 class="section-headline">Luxury is not<br>a price tag.<br><em>It is a feeling.</em></h2>
+            <div class="thin-rule"></div>
+            <p class="body-text">
+                At Vikam Atalaya, we believe every family — regardless of budget — deserves a home that breathes,
+                inspires, and endures. Through intelligent space management, natural light design, and carefully chosen
+                materials, we deliver the luxury of truly living, at a price that respects your dreams.
+            </p>
+            <br>
+            <p class="body-text">
+                Greenery is not an afterthought — it is woven into every plan. Because when your child runs barefoot on
+                grass and your evening ends with birdsong, that is luxury in its truest form.
+            </p>
+        </div>
+
+        <div class="philosophy-visual">
+            <div class="phi-box phi-box-1">
+                <p class="phi-box-1-quote">"A house built with integrity is a gift to those who will never meet you."
+                </p>
+            </div>
+            <div class="phi-box phi-box-3"></div>
+            <div class="phi-box phi-box-2">
+                <div>
+                    <div class="phi-box-2-num">100%</div>
+                    <div class="phi-box-2-label">Sincere<br>Materials</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ PILLARS ══ -->
+    <section class="pillars">
+        <div class="section-tag">Six Pillars of Vikam Atalaya</div>
+        <h2 class="section-headline">Built on values.<br><em>Measured in lifetimes.</em></h2>
+        <div class="thin-rule"></div>
+        <p class="body-text">Every decision we make — from the blueprint to the final coat of paint — is governed by six
+            unwavering commitments.</p>
+
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <div class="pillar-num">01</div>
+                <div class="pillar-title">Affordable Luxury Through Design</div>
+                <p class="pillar-desc">Exceptional living should not be a privilege of the few. We use intelligent
+                    design and space-planning to deliver premium experiences within honest budgets.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-num">02</div>
+                <div class="pillar-title">Sincere Materials. Zero Compromise.</div>
+                <p class="pillar-desc">Every brick, beam, and finish is chosen for strength and longevity. We use what
+                    we promise — verified, quality-tested, and built to last decades.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-num">03</div>
+                <div class="pillar-title">Meticulous On-Time Delivery</div>
+                <p class="pillar-desc">Your timeline is sacred. We plan with precision, execute with discipline, and
+                    honour our delivery commitments — because your trust is our most valued material.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-num">04</div>
+                <div class="pillar-title">Green & Living Spaces</div>
+                <p class="pillar-desc">Nature is built into every community — landscaped gardens, tree-lined paths, open
+                    sky pavilions. Your home breathes so you can too.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-num">05</div>
+                <div class="pillar-title">Generational Asset Building</div>
+                <p class="pillar-desc">We build for the long arc. Homes that appreciate in value, in structure, and in
+                    memory — worthy of being passed from parent to child to grandchild.</p>
+            </div>
+            <div class="pillar-card">
+                <div class="pillar-num">06</div>
+                <div class="pillar-title">Community, Not Customers</div>
+                <p class="pillar-desc">You are our Community Partner. We are invested in your wellbeing, your children's
+                    flourishing, and the collective joy of the neighbourhood we build together.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ OUR PROMISE ══ -->
+    <section class="promise">
+        <div>
+            <div class="section-tag">Our Promise to You</div>
+            <h2 class="section-headline">A partnership<br>that lasts<br><em>forever.</em></h2>
+            <div class="thin-rule"></div>
+            <p class="body-text">
+                Buying a home is one of life's most significant decisions. We take that responsibility with the gravity
+                it deserves. Here is what you can always expect from Vikam Atalaya.
+            </p>
+        </div>
+
+        <div>
+            <div class="promise-list">
+                <div class="promise-item">
+                    <div class="promise-icon">
+                        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 7L5.5 11L12 3" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="promise-item-title">Transparent Pricing</div>
+                        <p class="promise-item-desc">No hidden costs. No last-minute surprises. What you see is what you
+                            pay. We believe in relationships built on clarity.</p>
+                    </div>
+                </div>
+                <div class="promise-item">
+                    <div class="promise-icon">
+                        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 7L5.5 11L12 3" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="promise-item-title">Quality You Can See & Touch</div>
+                        <p class="promise-item-desc">Open site visits. Material inspections. We invite you to witness
+                            the process — because our quality stands without curtains.</p>
+                    </div>
+                </div>
+                <div class="promise-item">
+                    <div class="promise-icon">
+                        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 7L5.5 11L12 3" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="promise-item-title">Timely Handover, Every Time</div>
+                        <p class="promise-item-desc">We treat deadlines as sacred. Our internal processes are designed
+                            so that your keys arrive in your hands — on the day we promised.</p>
+                    </div>
+                </div>
+                <div class="promise-item">
+                    <div class="promise-icon">
+                        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 7L5.5 11L12 3" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="promise-item-title">Post-Handover Care</div>
+                        <p class="promise-item-desc">Our relationship does not end at the handover. We stand with our
+                            community partners long after you move in — for service, support, and peace of mind.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ COMMUNITY QUOTE ══ -->
+    <section class="community">
+        <p class="community-quote">
+            "We do not sell houses. We help families find the place where their most beautiful memories will be made."
+        </p>
+        <span class="community-attr">— Vikam Atalaya Multi Projects</span>
+    </section>
+
+    <!-- ══ FOR THE CHILDREN ══ -->
+    <section class="children">
+        <div>
+            <div class="section-tag">For the Next Generation</div>
+            <h2 class="section-headline">Every child deserves<br>a <em>magnificent</em><br>childhood.</h2>
+            <div class="thin-rule"></div>
+            <p class="body-text">
+                Our communities are designed with young lives in mind. Safe open spaces. Green corridors. Areas that
+                spark imagination, encourage friendships, and lay the foundation for confident, successful human beings.
+            </p>
+            <br>
+            <p class="body-text">
+                When a child grows up in a community of warmth, greenery, and dignity — they carry that rootedness into
+                everything they become.
+            </p>
+        </div>
+
+        <div class="children-boxes">
+            <div class="child-box">
+                <div class="child-box-icon">🌿</div>
+                <div class="child-box-title">Green Play Spaces</div>
+                <p class="child-box-desc">Safe, landscaped open areas where children play freely under open skies.</p>
+            </div>
+            <div class="child-box">
+                <div class="child-box-icon">📚</div>
+                <div class="child-box-title">Learning Environments</div>
+                <p class="child-box-desc">Proximity to schools, libraries, and community learning hubs — nurturing
+                    curiosity.</p>
+            </div>
+            <div class="child-box">
+                <div class="child-box-icon">🤝</div>
+                <div class="child-box-title">Community Bonds</div>
+                <p class="child-box-desc">Neighbourhoods where families look out for each other and friendships last a
+                    lifetime.</p>
+            </div>
+            <div class="child-box">
+                <div class="child-box-icon">🏡</div>
+                <div class="child-box-title">A Safe Haven</div>
+                <p class="child-box-desc">Secure, calm, well-lit environments — so every parent rests with peace of
+                    mind.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ GENERATIONS ══ -->
+    <section class="generations">
+        <div class="gen-inner">
+            <div>
+                <div class="section-tag">Built for Generations</div>
+                <h2 class="section-headline">A home that<br>outlives us<br><em>all.</em></h2>
+                <div class="thin-rule"></div>
+                <p class="body-text">
+                    The truest measure of a home is not how it looks on move-in day — but how it stands thirty years
+                    later. We engineer for durability, maintain for integrity, and build for the family you haven't met
+                    yet: your grandchildren.
+                </p>
+                <br>
+                <p class="body-text">
+                    Our homes are assets — in the deepest sense. They grow in value, in character, and in the stories
+                    that accumulate within their walls.
+                </p>
+            </div>
+
+            <div class="gen-visual">
+                <div class="gen-bar-wrap">
+                    <div class="gen-bar-label"><span>Structural Strength</span><span>Grade A</span></div>
+                    <div class="gen-bar-track">
+                        <div class="gen-bar-fill" style="width:95%"></div>
+                    </div>
+                </div>
+                <div class="gen-bar-wrap">
+                    <div class="gen-bar-label"><span>Material Quality</span><span>Premium</span></div>
+                    <div class="gen-bar-track">
+                        <div class="gen-bar-fill" style="width:98%"></div>
+                    </div>
+                </div>
+                <div class="gen-bar-wrap">
+                    <div class="gen-bar-label"><span>Delivery Accuracy</span><span>On Time</span></div>
+                    <div class="gen-bar-track">
+                        <div class="gen-bar-fill" style="width:100%"></div>
+                    </div>
+                </div>
+                <div class="gen-bar-wrap">
+                    <div class="gen-bar-label"><span>Green Space Coverage</span><span>Abundant</span></div>
+                    <div class="gen-bar-track">
+                        <div class="gen-bar-fill" style="width:88%"></div>
+                    </div>
+                </div>
+                <div class="gen-bar-wrap">
+                    <div class="gen-bar-label"><span>Community Satisfaction</span><span>Exceptional</span></div>
+                    <div class="gen-bar-track">
+                        <div class="gen-bar-fill" style="width:96%"></div>
+                    </div>
+                </div>
+
+                <div
+                    style="margin-top: 40px; padding: 28px; border: 1px solid rgba(184,146,58,0.3); border-radius: 2px; background: rgba(184,146,58,0.05);">
+                    <div
+                        style="font-size:0.6rem; letter-spacing:0.25em; text-transform:uppercase; color: var(--gold); margin-bottom:12px;">
+                        Our Commitment</div>
+                    <p
+                        style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-style:italic; color:rgba(255,255,255,0.8); line-height:1.6;">
+                        "We build as though our own family will live here — because in spirit, they always will."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ CLOSING ══ -->
+    <section class="closing">
+        <div class="closing-logo">
+            <div class="closing-emblem">
+                <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2L4 10V26H11V18H17V26H24V10L14 2Z" stroke="#B8923A" stroke-width="1.3"
+                        stroke-linejoin="round" />
+                    <circle cx="14" cy="13" r="2.5" stroke="#B8923A" stroke-width="1" />
+                </svg>
+            </div>
+            <span class="closing-name">Vikam Atalaya Multi Projects</span>
+        </div>
+
+        <p class="closing-tagline">
+            Your journey to a meaningful, fulfilling, and beautiful life begins with a single step — into a home built
+            with love.
+        </p>
+
+        <div class="closing-divider"></div>
+
+        <div class="closing-contact">
+            <div>
+                <div class="contact-item-label">Location</div>
+                <div class="contact-item-value">Bhubaneswar, Odisha</div>
+            </div>
+            <div>
+                <div class="contact-item-label">Talk to Us</div>
+                <div class="contact-item-value">+91 — xxxxxxxxxx</div>
+            </div>
+            <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">hello@vikamatalaya.in</div>
+            </div>
+            <div>
+                <div class="contact-item-label">Visit Us</div>
+                <div class="contact-item-value">By Appointment</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>© Vikam Atalaya Multi Projects</span>
+        <span>Bhubaneswar · Odisha · India</span>
+        <span>Building Legacies</span>
+    </footer>
+
+</body>
+
+</html>
